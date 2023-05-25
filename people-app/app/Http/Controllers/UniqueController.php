@@ -11,7 +11,7 @@ class UniqueController extends Controller
     {
         $people = People::all();
 
-        return response()->json($people);
+        return response()->json($people, 200);
     }
 
     public function create(Request $request)
@@ -27,7 +27,7 @@ class UniqueController extends Controller
 
         $person->save();
 
-        return response()->json($person, 200);
+        return response()->json($person, 201);
     }
 
 
@@ -61,7 +61,7 @@ class UniqueController extends Controller
 
         $person->delete();
 
-        return response()->json('Deleted', 200);
+        return response()->json('Deleted', 204);
     }
 
 }
